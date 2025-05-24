@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://bobobo1234567.github.io/dr-mohamed-abdelsaboor-portfolio/",
+  "homepage": "https://bobobo1234567.github.io/dr-mohamed-abdelsaboor-portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
