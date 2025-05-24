@@ -27,6 +27,7 @@ const CertificateGallery = () => {
 
   return (
     <div>
+      {/* شبكة الصور */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {certificates.map((cert, index) => (
           <div
@@ -42,6 +43,7 @@ const CertificateGallery = () => {
               src={cert.imagePath}
               alt={cert.title}
               className="w-full h-48 object-cover"
+              loading="lazy" // تحسين تحميل الصور
             />
             <div className={`p-3 ${isDark ? 'bg-gray-800' : 'bg-white'}`}>
               <h3 className="text-sm font-medium">{cert.title}</h3>
@@ -50,19 +52,27 @@ const CertificateGallery = () => {
         ))}
       </div>
 
+      {/* المودال لعرض الشهادة مكبرة */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
-          <div className="relative max-w-4xl w-full">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 overflow-auto"
+          onClick={() => setSelectedCert(null)} // غلق عند الضغط خارج الصورة
+        >
+          <div 
+            className="relative max-w-4xl w-full"
+            onClick={e => e.stopPropagation()} // منع إغلاق المودال عند الضغط على الصورة أو الأزرار
+          >
             <button
               onClick={() => setSelectedCert(null)}
               className="absolute -top-4 -right-4 p-2 rounded-full bg-white text-gray-900 hover:bg-gray-100"
+              aria-label="Close certificate preview"
             >
               <X size={24} />
             </button>
             <img
               src={selectedCert.imagePath}
               alt={selectedCert.title}
-              className="w-full rounded-lg"
+              className="w-full max-h-screen object-contain rounded-lg"
             />
           </div>
         </div>

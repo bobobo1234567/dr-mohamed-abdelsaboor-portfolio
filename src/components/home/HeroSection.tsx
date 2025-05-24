@@ -7,6 +7,9 @@ const HeroSection = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
+  // استخدم المسار المباشر من مجلد public
+  const doctorImg = '/images/doctor-new.jpg';
+
   return (
     <section className="py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +71,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="rounded-xl overflow-hidden aspect-w-1 aspect-h-1">
                 <img 
-                  src="/images/doctor-new.jpg" 
+                  src={doctorImg} 
                   alt="Dr. Mohamed Abdelsaboor" 
                   className="object-cover w-full h-full rounded-xl"
                 />
