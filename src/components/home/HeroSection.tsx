@@ -8,7 +8,7 @@ const HeroSection = () => {
   const isDark = theme === 'dark';
 
   // استخدم المسار المباشر من مجلد public
-  const doctorImg = '/images/doctor-new.jpg';
+  const doctorImg = 'images/doctor-new.jpg';
 
   return (
     <section className="py-12 md:py-20">
