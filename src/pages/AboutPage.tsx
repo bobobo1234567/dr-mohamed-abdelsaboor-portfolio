@@ -46,7 +46,7 @@ const AboutPage = () => {
             <div>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img 
-                  src="/images/doctor-new0.jpg" 
+                  src="images/doctor-new0.jpg" 
                   alt="Dr. Mohamed Abdelsaboor" 
                   className="w-full h-auto object-cover"
                   loading="lazy"
